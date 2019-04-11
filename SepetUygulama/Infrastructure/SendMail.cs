@@ -24,8 +24,8 @@ namespace SepetUygulama.Infrastructure
 
             message.To.Add(new MailAddress(Configuration.GetValue<string>("SepetAppMailAddres")));
 
-            message.From = new MailAddress("kaldera.portal@gmail.com");  // replace with valid value
-            message.Subject = "Portal Mesajı";
+            message.From = new MailAddress("");  // replace with valid value
+            message.Subject = "";
             message.Body = mesaj;
             message.IsBodyHtml = true;
 
@@ -33,11 +33,11 @@ namespace SepetUygulama.Infrastructure
             {
                 var credential = new NetworkCredential
                 {
-                    UserName = "kaldera.portal@gmail.com",
-                    Password = "kalderasoft123"
+                    UserName = "",
+                    Password = ""
                 };
                 smtp.Credentials = credential;
-                smtp.Host = "smtp.gmail.com";
+                smtp.Host = "";
                 smtp.Port = 587;
                 smtp.EnableSsl = true;
                 smtp.Send(message);
